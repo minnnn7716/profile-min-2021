@@ -1,0 +1,166 @@
+.nav{
+  background-color: $white;
+  padding: 20px;
+  position: fixed;
+  top: -92px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba($color: #000000, $alpha: 0.1);
+  transition: all ease .5s;
+  @include mobile(){
+    top: -73px;
+    padding: 22px 0;
+  }
+}
+
+.nav.hiddened{
+  top: -92px;
+}
+
+.nav.showed{
+  top: 0;
+}
+
+.nav-layout,.navLink-layout{
+  display: flex;
+}
+
+.nav-layout{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLink-layout{
+  @include mobile{
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.nav-decoImage{
+  max-width: 350px;
+  @media(max-width: 769px){
+    max-width: 300px;
+  }
+}
+
+// 按鈕設定
+.navLink{
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  @include mobile(){
+    padding: 0 10px;
+  }
+  
+  .navLink-text{
+    font-size: $font-h5;
+    margin-left: 15px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      right: 0;
+      bottom: -8px;
+      transition: all ease 0.5s;
+    }
+    @include mobile(){
+      font-size: $font-h6;
+    }
+  }
+  &:hover>.navLink-daimaond-hover{
+    background-color: $secondary;
+    transition: all ease 0.5s;
+  }
+
+  &:hover>.navLink-geometry>.navLink-geometry-inside{
+    @include hexagon(17px, 7.5px, $primary);
+  }
+
+  &:hover>.navLink-circile-hover{
+    background-color: $accent;
+    transition: all ease 0.5s;
+  }
+  
+  &:hover>.navLink-text::after{
+    width: 100%;
+  }  
+}
+
+.navLink-last{
+  padding-right: 0;
+  @include mobile(){
+    padding-right: 10px;
+  }
+}
+
+.navLink-layout>li.active{
+  .navLink-daimaond-hover{
+    background-color: $secondary;
+  }
+  .navLink-geometry>.navLink-geometry-inside{
+    @include hexagon(17px, 7.5px, $primary);
+  }
+  .navLink-circile-hover{
+    background-color: $accent;
+  }
+  .navLink-text::after{
+    width: 100%;
+  }
+
+}
+
+// 各別圖案樣式設定
+.navLink-daimaond{
+  .navLink-geometry{
+    @include diamondBorder(17px, 4.5px);
+    background-color: $white;
+  }
+  .navLink-text{
+    color: $secondary;
+    border-bottom-color: $secondary;
+    &::after{
+      background-color: $secondary;
+    }
+  }
+}
+
+.navLink-hexagon{
+  .navLink-geometry{
+    @include hexagon(25px, 11.5px, $primary);
+    margin-bottom: 5px;
+  }
+  .navLink-geometry-inside{
+    @include hexagon(15px, 6.5px, $white);
+    left: 50%;
+    transform: translate(-50%, 85%);
+    @include mobile(){
+      transform: translate(-50%, 70%);
+    }
+  }
+  .navLink-text{
+    color: $primary;
+    border-bottom-color: $primary;
+    &::after{
+      background-color: $primary;
+    }
+  }
+}
+
+.navLink-circile{
+  .navLink-geometry{
+    @include circleBorder(22px, 5px);
+    background-color: $white;
+  }
+  .navLink-text{
+    color: $accent;
+    border-bottom-color: $accent;
+    &::after{
+      background-color: $accent;
+    }
+  }
+}

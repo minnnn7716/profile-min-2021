@@ -1,0 +1,9 @@
+.img-select-item img{
+  filter: brightness(0.4);
+  transition: all ease .5s;
+}
+
+.img-select-item:hover>img,
+.img-select-item.active>img{
+  filter: brightness(1);
+}

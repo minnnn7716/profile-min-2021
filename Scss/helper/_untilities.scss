@@ -1,0 +1,213 @@
+// img
+.bg-cover{
+  background-size: cover;
+  background-position: center center;
+}
+
+// color
+.bg-primary{
+  background-color: $primary;
+}
+
+.bg-secondary{
+  background-color: $secondary;
+}
+
+.bg-accent{
+  background-color: $accent;
+}
+
+.text-white{
+  color: $white;
+}
+
+.text-primary{
+  color: $primary;
+}
+
+.text-secondary{
+  color: $secondary;
+}
+
+.text-accent{
+  color: $accent;
+}
+
+.text-gary{
+  color: $gary;
+}
+
+.text-darkGary{
+  color: $darkGary;
+}
+
+.text-vertical{
+  writing-mode: vertical-lr;
+}
+
+// font
+.font-en{
+  font-family: 'Oswald',sans-serif;
+}
+
+.font-h1{
+  font-size: $font-h1;
+  @include mobile(){
+    font-size: 55px;
+  }
+}
+
+.font-h3{
+  font-size: $font-h3;
+}
+
+.font-h4{
+  font-size: $font-h4;
+}
+
+.font-h5{
+  font-size: $font-h5;
+}
+
+.font-h6{
+  font-size: $font-h6;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+
+.text-center{
+  align-items: center;
+}
+
+.text-justify{
+  text-align: justify;
+}
+
+.line-height-2x{
+  line-height: 2;
+}
+
+@include pad(){
+  .text-pad-left{
+    text-align: left;
+  }
+}
+
+@include mobile(){
+  .font-mob-h6{
+    font-size: $font-h6;
+  }
+
+  .font-mob-16{
+    font-size: 16px;
+  }
+}
+
+// height, weight
+.h-100{
+  height: 100%;
+}
+
+.w-100{
+  width: 100%;
+}
+
+@include mobile(){
+  .w-mob-100{
+    width: 100%;
+  }
+}
+
+// position
+.p-relative{
+  position: relative;
+}
+
+.p-absolute{
+  position: absolute;
+}
+
+// display
+.d-inline-block{
+  display: inline-block;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.d-none{
+  display: none;
+}
+
+@include pad(){
+  .d-pad-block{
+    display: block;
+  }
+
+  .d-pad-none{
+    display: none;
+  }
+
+  .d-pad-flex{
+    display: flex;
+  }
+}
+
+@include mobile{
+  .d-mob-none{
+    display: none;
+  }
+
+  .d-mob-block{
+    display: block;
+  }
+}
+
+// flex
+.flex-column{
+  flex-direction: column;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-space-between{
+  justify-content: space-between;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+@media(max-width: 769px){
+  .flex-verticalPad-column{
+    flex-direction: column;
+  }
+  .align-items-verticalPad-start{
+    align-items: flex-start;
+  }
+}
+
+@include mobile(){
+  .flex-mob-column{
+    flex-direction: column;
+  }
+  .flex-mob-row{
+    flex-direction: row;
+  }
+  .align-items-mob-none{
+    align-items: none;
+  }
+  .justify-mob-center{
+    justify-content: center;
+  }
+
+}

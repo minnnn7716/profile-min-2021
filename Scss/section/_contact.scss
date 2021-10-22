@@ -1,0 +1,35 @@
+.contact-nameTitle{
+  position: absolute;
+  margin-left: -40px;
+}
+
+.contact-img{
+  height: 220px;
+  max-width: 400px;
+  flex: 0 0 100%;
+  &::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -15px;
+    bottom: 0;
+    left: -15px;
+    right: 15px;
+    border: 2px solid #B4895B;
+  }
+}
+
+.contact-imgDeco{
+  position: absolute;
+  max-width: 420px;
+  z-index: 50;
+  top: 55%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  @include largePc(){
+    max-width: 500px;
+    top: 60%;
+    left: 50%;
+  }
+}

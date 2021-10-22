@@ -1,0 +1,61 @@
+.gradualTitle{
+  position: relative;
+  z-index: 100;
+
+  &::before, &::after{
+    content: attr(data-title);
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+  }
+
+  &::before{
+    top: -30px;
+    opacity: 0.3;
+    height: 52px;
+  }
+  &::after{
+    top: -58px;
+    opacity: 0.1;
+    height: 50px;
+  }
+
+  @include mobile(){
+    &::before{
+      top: -22px;
+      height: 42px;
+    }
+    &::after{
+      top: -45px;
+      height: 42px;
+    }
+  }
+}
+
+.gradualTitle-rotate{
+  transform: rotate(-90deg) translate(-75%, -200%);
+}
+
+.gradualTitle-rotate-experence{
+  transform: rotate(-90deg) translate(-70%, -240%);
+}
+
+.gradualTitle-vertical{
+  position: relative;
+  z-index: 100;
+
+  &::before, &::after{
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+  }
+
+  &::before{
+    left: 130px;
+    opacity: 0.3;
+  }
+  &::after{
+    left: 260px;
+    opacity: 0.1;
+  }
+}

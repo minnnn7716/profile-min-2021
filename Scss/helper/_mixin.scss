@@ -1,0 +1,101 @@
+@mixin largePc {
+  @media(min-width: 1700px){
+    @content;
+  }
+}
+
+@mixin pc {
+  @media(max-width: 1200px){
+    @content;
+  }
+}
+
+@mixin pad {
+  @media(max-width: 1025px){
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media(max-width: 750px){
+    @content;
+  }
+}
+
+@mixin positionCenter{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin positionCenter-hexagon{
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+@mixin circleBorder($size, $border-width){
+  width: $size;
+  height: $size;
+  border-width: $border-width;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: $accent;
+  background-color: $backgroundColor;
+  transition: all ease 0.5s;
+}
+
+@mixin diamondBorder($size, $border-width) {
+  width: $size;
+  height: $size;
+  border-width: $border-width;
+  border-style: solid;
+  border-color: $secondary;
+  background-color: $backgroundColor;
+  transform: rotate(45deg);
+  transition: all ease 0.5s;
+}
+
+@mixin hexagon($width, $height, $color) {
+  position: relative;
+  width: $width;
+  height: 0;
+  border-width: 0 $width/4 $height;
+  border-style: solid;
+  border-color: transparent transparent $color;
+  transition: all ease 0.5s;
+  &::before{
+    content: '';
+    position: absolute;
+    top: $height;
+    left: -($width/4);
+    width: $width;
+    height: 0;
+    background: none;
+    border-width: $height $width/4 0;
+    border-style: solid;    
+    border-color: $color transparent transparent;
+    transition: all ease 0.5s;
+  }
+}
+
+@mixin btn($color) {
+  display: inline-block;
+  padding: 6px 40px;
+  border-radius: 50px;
+  background-color: $color;
+  @include largePc(){
+    padding: 6px 50px;
+  }
+  @media (max-width: 1350px){
+    padding: 6px 35px;
+  }
+  @media(max-width: 769px){
+    padding: 4px 20px;
+    margin: 0 5px;
+  }
+
+  &:hover{
+    background-color: darken($color, 15%);
+  }
+}

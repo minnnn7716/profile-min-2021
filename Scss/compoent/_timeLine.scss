@@ -1,0 +1,24 @@
+.timeLine-diamond{
+  .timeLine-line{
+    width: 2px;
+    height: 110%;
+    position: absolute;
+    left: 4px;
+    top: -20px;
+  }
+
+  .timeLine-content-title-dot{
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.timeLine-circle{
+  .timeLine-line{
+    width: 2px;
+    height: 110%;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+  }
+}
